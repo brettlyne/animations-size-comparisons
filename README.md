@@ -1,1 +1,1 @@
-# [See progress here](https://github.intuit.com/pages/bholcomb/illustration-animations/)
+https://brettlyne.github.io/animations-size-comparisons/
