@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title></title>
+    <style type='text/css'>
+        html {
+            overflow-x: initial !important;
+            margin-bottom: 200px;
+        }
+        
+        html {
+            font-size: 18px;
+            font-family: "Avenir Next forINTUIT", "Avenir Next", "Avenir Pro", Avenir,
+    Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        code {
+            white-space: nowrap;
+        }
+        pre {
+            margin: 0;
+            font-size: 16px;
+        }
+        code, pre {
+            background-color: #eee;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1,h3 {
+            font-weight: 600;
+        }
+        h3 {
+            margin-top: 60px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            padding-left: 12px;
+            margin-bottom: 8px;
+        }
+        .example {
+            float: right;
+            margin: 20px;
+        }
+        .example img {
+            width: 100%;
+        }
+        .example.big {
+        }
+        .top .example {
+            float: left !important;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="container">
+        <h1>Animations</h1>
+        <p>
+            <a href="https://github.intuit.com/bholcomb/illustration-animations/">GitHub</a> | 
+            <a href="https://github.intuit.com/bholcomb/illustration-animations/tree/master/animation-files">GIF / MP4 / JSON</a> assets for animations.
+        </p>
+        <p><a href="http://gifbrewery.com/">GIF Brewery 3</a> is now free for converting video files to GIF</p>
+        <div class="top">
+                <div class="example" id="webinars" style="width:159px"></div>
+                <div class="example big" id="webinars-big" style="width:318"></div>
+                <div class="example" id="relaxed" style="width:115px"></div>
+                <div class="example big" id="relaxed-big" style="width:230px"></div>
+                <div class="example" id="drive" style="width:170px"></div>
+                <div class="example big" id="drive-big" style="width:340px"></div>
+                <div style="clear:both"></div>
+                <div class="example" id="rocket" style="width:250px"></div>
+                <div class="example big" id="rocket-big" style="width:500px"></div>
+                <div style="clear:both"></div>
+                <div class="example" id="chat" style="width:81px"></div>
+                <div class="example big" id="chat-big" style="width:162px"></div>
+                <div class="example" id="hello-organized" style="width:81px"></div>
+                <div class="example big" id="hello-organized-big" style="width:162px"></div>
+                <div style="clear:both"></div>
+                <div class="example" id="hands-clap" style="width:130px"></div>
+                <div class="example big" id="hands-clap-big" style="width:260px"></div>
+                <div class="example" id="call-sales" style="width:61px"></div>
+                <div class="example big" id="call-sales-big" style="width:122px"></div>
+                <div style="clear:both"></div>
+                <div class="example" id="claim-every-dollar" style="width:127px"></div>
+                <div class="example big" id="claim-every-dollar-big" style="width:254px"></div>
+                <div class="example" id="free-up-time" style="width:110px"></div>
+                <div class="example big" id="free-up-time-big" style="width:220px"></div>
+                
+        </div>
+        <div style="clear: both;height:80px"></div>
+
+        <h1>Comparison of Animation Delivery Options</h1>
+        <p>Using the hands clap illustration as an example.</p>
+        <h3>Bodymovin</h3>
+        <div class="example big" id="lottie-big" style="width:260px"></div>
+        <div class="example" id="lottie" style="width:130px"></div>
+        <ul>
+            <li>😀 60 FPS rendering, looks nice!</li>
+            <li>😀 Resolution independent vector rendering</li>
+            <li>😀 No background included, so could use over gradients or images + no need to recreate assets for different color backgrounds</li>
+            <li>😀 Can manipulate animation, replay on demand, adjust playback speed, pauses between loops, etc</li>
+            <li>▶️ Animation data file is <code>12KB | 2KB gzipped</code></li>
+            <li>☹️ <a href="./bodymovin_light.min.js">bodymovin.js</a> must be loaded once on any page with a bodymovin animation
+                    <code>147KB | 39KB gzipped</code>
+            </li>
+            <li>☹️ ️Must initiate animation with javascript<br>
+<pre>&lt;script src=&quot;./bodymovin_light.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    bodymovin.loadAnimation({
+        container: document.getElementById('lottie'),
+        path: './animation-files/chat.json',
+        renderer: 'svg',
+    })
+&lt;/script&gt;
+</pre>
+            </li>
+        </ul>
+        <h3>Animated gif</h3>
+        <div class="example big"><img src="./animation-files/hands-clap@2x.gif" alt=""></div>
+        <div class="example"><img src="./animation-files/hands-clap@2x.gif" alt="" style="width:130px"></div>
+        <ul>
+            <li>😃 Easy to drop into page</li>
+            <li>😃 Can easily add to emails</li>
+            <li>️️▶️ Gif file is <code>56KB</code></li>
+            <li>️️️▶️ Rendered out at 2x so it doesn&#39;t look fuzzy on retina displays, then resized to original dimensions</li>
+            <li>☹️ No control of playback, just loops indefinitely</li>
+            <li>☹️ Largest file for lowest quality rendering</li>
+            <li>☹️ Lowest quality for framerate, color, and compression</li>
+            <li>☹️ No transparent background, will need to re-render for every background option</li>
+        </ul>
+        <h3>Video file (mp4)</h3>
+        <video class="example big" loop muted autoplay playsinline><source src="./animation-files/hands-clap@2x.mp4" type="video/mp4"></video>
+        <video class="example" loop muted autoplay playsinline style="width:130px"><source src="./animation-files/hands-clap@2x.mp4" type="video/mp4"></video>
+        <ul>
+            <li>😃 Both smaller and higher quality than gif file</li>
+            <li>️️▶️ Mp4 file is <code>23KB</code> </li>
+            <li>️️▶️ Rendered out at 2x so it doesn&#39;t look fuzzy on retina displays, then resized to original dimensions</li>
+            <li>️️▶️ Playback control possible in javascript, but by default just loops indefinitely</li>
+            <li>️️▶️ Requires video tag: <br>
+                <code>&lt;video loop muted autoplay playsinline&gt;&lt;source src=&quot;...&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;</code></li>
+            <li>☹️ No transparent background, will need to render for every background option</li>
+        </ul>
+    </div>
+    </div>
+    <script src="./bodymovin_light.min.js" type="text/javascript"></script>
+    <script>
+
+        const animations = [
+            { id: 'webinars', file: 'related-webinars.json' },
+            { id: 'drive', file: 'lifestyle-drive.json' },
+            { id: 'relaxed', file: 'lifestyle-relaxed.json' },
+            { id: 'rocket', file: 'money-rocket.json' },
+            { id: 'chat', file: 'chat.json' },
+            { id: 'hello-organized', file: 'hello-organized.json' },
+            { id: 'hands-clap', file: 'hands-clap.json' },
+            { id: 'call-sales', file: 'call-sales.json' },
+            { id: 'claim-every-dollar', file: 'claim-every-dollar.json' },
+            { id: 'free-up-time', file: 'free-up-time.json' },
+            { id: 'lottie', file: 'hands-clap.json' }
+        ];
+    
+        animations.forEach(animation => {
+            bodymovin.loadAnimation({
+                container: document.getElementById(animation.id), // Required
+                path: './animation-files/'+animation.file, // Required
+                renderer: 'svg', // Required
+            })
+            bodymovin.loadAnimation({
+                container: document.getElementById(animation.id+'-big'), // Required
+                path: './animation-files/'+animation.file, // Required
+                renderer: 'svg', // Required
+            })
+        });
+
+        
+    </script>
+</body>
+
+</html>
+
